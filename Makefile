@@ -1,7 +1,7 @@
 ifneq ($(findstring .exe, $(SHELL)), )
     CC     = tcc
-    CFLAGS = -Wall -Werror
 endif
+CFLAGS = -Wall -Werror
 
 test.exe: w1ce.o test.o
 	$(CC) -o $@ $+
