@@ -5,8 +5,8 @@
 
 bool         w1_isfile (const char* path);
 bool         w1_isdir  (const char* path);
-unsigned int w1_abspath(const char* path, unsigned int buf_length, char* buf);
-int          w1_getch();
+unsigned int w1_abspath(const char* path, char* buf, unsigned int buf_length);
+int          w1_getch  ();
 
 #endif
 

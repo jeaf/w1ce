@@ -25,7 +25,7 @@ bool w1_isdir(const char* path)
     #endif
 }
 
-unsigned int w1_abspath(const char* path, unsigned int buf_length, char* buf)
+unsigned int w1_abspath(const char* path, char* buf, unsigned int buf_length)
 {
     #ifdef _WIN32
         return GetFullPathName(path, buf_length, buf, 0);
