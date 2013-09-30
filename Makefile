@@ -1,12 +1,14 @@
-TCC      = $(USERPROFILE)\app\tcc\tcc.exe
-TCC_OPTS = -Wall -Werror
+ifneq ($(findstring .exe, $(SHELL)), )
+    CC     = tcc
+    CFLAGS = -Wall -Werror
+endif
 
 test.exe: w1ce.o test.o
-	$(TCC) -o $@ $+
+	$(CC) -o $@ $+
 
 test.o: test.c w1ce.h
-	$(TCC) $(TCC_OPTS) -c $<
+	$(CC) $(CFLAGS) -c $<
 
 w1ce.o: w1ce.c w1ce.h
-	$(TCC) $(TCC_OPTS) -c $<
+	$(CC) $(CFLAGS) -c $<
 
